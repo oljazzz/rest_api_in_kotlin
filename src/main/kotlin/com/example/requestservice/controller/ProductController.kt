@@ -20,9 +20,7 @@ class ProductController(private val productService: ProductService) {
     fun read(@PathVariable id: Long) = productService.get(id)
 
     @PutMapping("{id}")
-    fun update(@PathVariable id: Long, @RequestBody product: Product) = productService.edit(
-        id, product
-    )
+    fun update(@PathVariable id: Long, @RequestBody product: Product) = productService.edit(id, product)
 
     @DeleteMapping("{id}")
     fun delete(@PathVariable id: Long) = productService.remove(id)
